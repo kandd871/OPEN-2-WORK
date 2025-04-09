@@ -294,7 +294,7 @@ fetch(opensheet_uri)
       makeDraggable(dot);
     });
 
-    const draggableImages = document.querySelectorAll('.container img, #dot-holder img');
+    const draggableImages = document.querySelectorAll('.container img, #dot-holder img, #post-its-mobile .post-it');
 
     draggableImages.forEach((img) => {
       makeDraggable(img);

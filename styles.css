@@ -1,0 +1,645 @@
+
+
+:root {
+    --background: #EEF0F2;
+    --black: #444444;
+    --yellow: #FFFFA9;
+  }
+
+@font-face {
+    font-family: 'ABC Gaisyr';
+    src: url('ABCGaisyr-Regular.otf') format('opentype');
+    font-weight: normal;
+    font-style: normal;
+  }
+
+@font-face {
+    font-family: 'ABC Gaisyr';
+    src: url('ABCGaisyr-RegularItalic.otf') format('opentype');
+    font-weight: normal;
+    font-style: italic;
+  }
+
+@font-face {
+    font-family: 'ABC Gaisyr';
+    src: url('ABCGaisyr-Book.otf') format('opentype');
+    font-weight: 300; /* instead of 'light' */
+    font-style: normal;
+  }
+  
+@font-face {
+    font-family: 'ABC Gaisyr';
+    src: url('ABCGaisyr-BookItalic.otf') format('opentype');
+    font-weight: 300; /* instead of 'light' */
+    font-style: italic;
+  }
+  
+  html::-webkit-scrollbar {
+    display: none;
+  }
+  
+  /* Hide scrollbar for IE, Edge and Firefox */
+  html {
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
+  }
+  
+  body::-webkit-scrollbar {
+    display: none;
+  }
+  
+  body {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+
+
+  html, body {
+    margin: 0;
+    padding: 0;
+    background: #EEF0F2;
+    font-family: 'ABC Gaisyr';
+    line-height: 1;
+    color: var(--black);
+    min-height: 100vh;
+    overflow-x: hidden!important;
+    display: flex;
+    flex-direction: column;
+}
+
+
+  .header {
+    margin: 1vh;
+    display: flex;
+    justify-content: space-between;
+    font-size: 2vh;
+    font-weight: 300;
+    z-index: 1000;
+  }
+
+  a{
+    text-decoration: none;
+    color: var(--black);
+  }
+
+  a:hover{
+    color: var(--yellow);
+    background-color: var(--black);
+  }
+
+  #links a:hover{
+    background-color: var(--yellow);
+    color: var(--black);
+  }
+
+  #logo{
+    font-weight: normal;
+    font-size: 5vh;
+    letter-spacing: -4px;
+  }
+
+  .center{
+    text-align: center;
+  }
+
+  
+
+  .folders{
+    margin: 0;
+    padding:0;
+    width: 100vw;
+    max-height: 70vh;
+    display: flex;
+    margin: 0 auto;
+    margin-bottom: 30px;
+    /* justify-content: center; */
+  }
+
+  .folder {
+    position: absolute;
+    bottom: 0px;
+    left: -2px;
+    width: 100.2vw;
+    height: 2vh;
+    transition: all 350ms ease-out;
+    background-color: var(--yellow);
+    font-size: 3vh;
+    border: 1px solid var(--black);
+    z-index: 1;
+  }
+  
+
+.tab:hover{
+    cursor:pointer;
+}
+
+.folder.active:not(#about-folder) {
+  height: 60vh !important;
+}
+
+/* 
+.shifted {
+    top: 10vh;
+  }
+   */
+
+.para{
+    width: 100vw;
+    font-size: 5vh;
+    font-weight: 300;
+    line-height: 1.1;
+    z-index: 2;
+    background-color: var(--yellow);
+    padding: 5vh 2vh 5vh 2vh;
+}
+/* You may already have this in your code */
+#about-para {
+  padding: 10vh 2vh 5vh 2vh;
+}
+
+#about-para{
+  height: 70vh;
+}
+
+.tab{
+    width: 33.3vw;
+    height: 9.5vh;
+    display: flex;
+    font-size: 25px;
+    align-content: center;
+    position: absolute;
+    top: -7vh;
+    padding-top: 2vh;
+    border-radius: 30px;
+    justify-content: center;
+    background-color:var(--yellow);
+    border-top: 1px solid var(--black);
+    border-left: 1px solid var(--black);
+    border-right: 1px solid var(--black);
+    z-index: -1;
+}
+
+#about-folder .tab span{
+  background-color: var(--background);
+}
+
+.folder:hover .tab span,
+.folder.active .tab span {
+  background-color: var(--background);
+}
+
+.folder.open {
+    z-index: 10; /* Higher than the default 1 */
+  }
+
+#about-folder {
+    z-index: 20!important;
+}
+
+#aboutFolder{
+    height:5vh;
+}
+#about{
+   left: 0;
+}
+
+#sectionA-folder{
+    height:3vh;
+}
+#sectionA {
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+#sectionB-folder{
+    height:3.5vh;
+}
+#sectionB {
+    right: 0;
+}
+
+#sectionC-folder{
+    height:8vh;
+}
+#sectionC{
+   left: 0;
+}
+
+#sectionD-folder{
+    height:9vh;
+}
+#sectionD{
+    left: 50%;
+    transform: translateX(-50%);
+}
+  
+#sectionE-folder{
+    height:10vh;
+}
+#sectionE {
+    right: 0;
+}
+
+#sectionF-folder{
+    height:14vh;
+}
+#sectionF{
+   left: 0;
+}
+
+#sectionG-folder{
+    height:15vh;
+}
+#sectionG{
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+#sectionH-folder{
+    height:16vh;
+}
+#sectionH {
+    right: 0;
+}
+
+#sectionI-folder{
+    height:20vh;
+}
+#sectionI{
+   left: 0;
+}
+
+.info-header, .room-details{
+  font-size: 2vh;
+}
+
+.info-header{
+  line-height: 0;
+}
+
+.prof-details{
+  font-size: 3vh;
+  line-height: .5;
+  font-weight: normal;
+}
+
+
+.container {
+  width: 570px;
+  overflow: hidden;
+  margin: 0 auto;
+  position: relative;
+  background-color: var(--yellow);
+  padding-bottom: 20px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  /* border: 1.5px solid var(--black); */
+}
+
+header {
+  background-color: var(--black);
+  color: var(--yellow);
+  text-align: center;
+  padding: 30px 0;
+  pointer-events: none;
+}
+
+header h1 {
+  margin: 0;
+  font-size: 5vh;
+  line-height: 1;
+  font-weight: normal;
+  pointer-events: none;
+}
+
+header h2 {
+  margin: 0;
+  font-size: 3vh;
+  font-weight: 300;
+  pointer-events: none;
+}
+
+table {
+  pointer-events: none;
+  width: 100%;
+  border-collapse:collapse;
+  margin-top: 20px;
+  font-weight: 300;
+  font-size: 2vh;
+  table-layout: fixed;
+}
+
+thead th {
+  background-color: var(--yellow);
+  padding: 10px;
+  text-align: left;
+  border: 2px solid var(--black);
+}
+
+thead th:nth-child(2) {
+}
+
+thead th:nth-child(1) {
+  width: 5%; /* Row number */
+  text-align: center;
+}
+
+tbody td:nth-child(1) {
+  text-align: center;
+}
+
+thead th:nth-child(2) {
+ background-color: var(--black);
+  color: var(--yellow);
+}
+
+
+thead th:nth-child(2),
+tbody td:nth-child(2) {
+  width: 40%; /* Students */
+}
+
+thead th:nth-child(3),
+tbody td:nth-child(3) {
+  width: 55%; /* Thesis Title */
+}
+
+tbody td {
+  padding: 0.5rem;
+  border: 2px solid var(--black);
+}
+
+tbody tr:nth-child(even) {
+  background-color: var(--yellow);
+}
+
+thead th:first-child,
+tbody td:first-child {
+border-left: none;
+}
+
+thead th:last-child,
+tbody td:last-child {
+border-right: none;
+}
+
+
+.container {
+  position: relative;
+  cursor: grab; /* Shows a grab icon when hovering */
+}
+
+.container:active {
+  cursor: grabbing; /* Changes the cursor to grabbing when the container is being dragged */
+}
+
+.web-footer {
+  margin: 0;
+  width: 100.1vw;
+  background-color: var(--black);
+  padding-top: 15vh; /* Reduced from 20vh for better spacing */
+  padding-bottom: 15vh; /* Added padding at bottom */
+  margin-top: auto; /* Pushes footer to bottom when content is short */
+  display: flex;
+  align-items: center; /* Aligns items vertically */
+}
+
+
+.web-footer a{
+  margin: 1vh;
+  color: var(--yellow);
+  text-decoration: none;
+  font-size: 2vh;
+  line-height: 2;
+  font-weight: 300;
+}
+
+#logo-footer img {
+  padding-right: 1vh;
+  display: flex;
+  max-height: 20vh; /* Adjusts the logo size as needed */
+}
+
+.footer-links {
+  display: flex;
+  gap: 15px; /* Adjusts spacing between links */
+}
+
+#logo-footer{
+  width: 100vw;
+  position: absolute;
+  pointer-events: none;
+  display: flex;
+  justify-content: center;
+}
+
+#logo-footer img {
+  max-height: 22vh; /* Adjusts the logo size as needed */
+}
+
+
+.rsvp-circle {
+  position: fixed;
+  bottom: 1vh;
+  right: 1vh;
+  width: 16vh;
+  height: 16vh;
+  background-color: var(--black);
+  color: var(--yellow);
+  font-weight: normal;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  font-size: 5vh;
+  z-index: 1001;
+  box-shadow: 0 2px 2px rgba(0, 0, 0, 0.2);
+  transition: all 0.15s ease;
+}
+
+.rsvp-circle:hover {
+  background-color: var(--yellow);
+  color: var(--black);
+}
+
+
+#links {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  gap: 1vw; /* Space between links */
+}
+
+#links a {
+  margin: 2vh;
+  color: var(--yellow);
+  text-decoration: none;
+  font-size: 2vh;
+  line-height: 2;
+  font-weight: 300;
+  white-space: nowrap; /* Prevents links from wrapping */
+}
+
+
+#dot-holder{
+  position: absolute;
+  width: 100vw;
+  height: 100vh;
+  top: 0px;
+  left: 0px;
+  z-index: 0;
+}
+
+.image{
+  /* width: 200px; */
+  max-width: 30%;
+  height: auto;
+  position: absolute;
+}
+
+#web-pic{
+  left: 65%;
+  top: 20%;
+}
+
+#desk-postit{
+  left: 35%;
+  top: 20%;
+}
+
+#fund-flyer{
+  top: 20%;
+  left: 5%;
+}
+
+#photos{
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: row;
+}
+
+#post-its-mobile{
+  display: none;
+}
+
+#mobile-back{
+  display: none;
+}
+
+.mobile-footer{
+  display: none;
+}
+
+
+
+@media screen and (max-width: 500px){
+  
+  html,body{
+    width: 100vw!important;
+    overflow-x: hidden!important;
+  }
+
+  .image, .folder, .leave{
+    display: none;
+  }
+
+  .center{
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    z-index: 100;
+  }
+
+  #post-its-mobile{
+    display: flex;
+    text-transform: uppercase;
+    width: 100%;
+    height: 100%;
+    align-items: center;
+    flex-direction: column;
+  }
+
+  #post-its-mobile>*{
+    width: 250px;
+    height: 250px;
+    background-color: var(--yellow);
+    color: var(--black);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 25px;
+    border: 1px solid var(--black);
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1);
+    position: absolute;
+  }
+
+  #postit1{
+    top: 15%;
+    left: 10%;
+  }
+  #postit2{
+    top: 37.5%;
+  }
+  #postit3{
+    top: 60%;
+    left: 30%;
+  }
+
+  .web-footer{
+    display: none;
+  }
+
+  #mobile-back{
+    display: block;
+    width: 150%;
+    /* height: 75%; */
+    position: absolute;
+    top: 100px;
+    left: -150px;
+    z-index: 0;
+  }
+
+  .mobile-footer{
+    display: block;
+    padding: 10%;
+    width: 100vw;
+    background-color: var(--black);
+    position: relative;
+    margin-top: 175%;
+  }
+
+  #links{
+    display: flex;
+    flex-direction: column;
+    font-weight: 100;
+    gap: 0vw;
+  }
+  
+  #links a {
+    margin: 0vh;
+    color: var(--yellow);
+    text-decoration: none;
+    font-size: 20px;
+  }  
+
+  #mobile-about{
+    color: var(--yellow);
+    width: 75%;
+    font-size: 20px;
+    font-weight: 100;
+    margin-bottom: 50px;
+  }
+
+  #rsvp{
+opacity: 10%;
+  }
+
+  #links a:hover{
+    background-color: none;;
+    color: var(--yellow);
+  }
+
+
+}

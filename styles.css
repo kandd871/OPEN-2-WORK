@@ -74,7 +74,6 @@
     justify-content: space-between;
     font-size: 2vh;
     font-weight: 300;
-    z-index: 1000;
   }
 
   a{
@@ -470,6 +469,7 @@ border-right: none;
   gap: 1vw; /* Space between links */
 }
 
+
 #links a {
   margin: 2vh;
   color: var(--yellow);
@@ -478,6 +478,10 @@ border-right: none;
   line-height: 2;
   font-weight: 300;
   white-space: nowrap; /* Prevents links from wrapping */
+}
+
+#cd-link{
+  z-index: 1000;
 }
 
 
@@ -549,7 +553,7 @@ border-right: none;
     justify-content: center;
     align-items: center;
     text-align: center;
-    z-index: 100;
+    z-index: 0;
   }
 
   #post-its-mobile{

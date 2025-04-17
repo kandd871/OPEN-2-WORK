@@ -535,6 +535,18 @@ border-right: none;
   display: none;
 }
 
+.folder-photo {
+  width: 600px;
+  height: auto;
+  position: absolute;
+  top: 30%;
+  left: 10%;
+  z-index: 5;
+  cursor: grab;
+  /* box-shadow: 2px 4px 8px rgba(0,0,0,0.2); */
+  transition: transform 0.2s ease;
+}
+
 
 
 @media screen and (max-width: 500px){
@@ -635,7 +647,7 @@ border-right: none;
     width: 75%;
     font-size: 20px;
     font-weight: 100;
-    margin-bottom: 50px;
+    margin-bottom: 30px;
   }
 
   #rsvp{
@@ -649,3 +661,13 @@ opacity: 10%;
 
 
 }
+
+.mobile-note {
+  font-size: 1.1rem;
+  color: var(--yellow);
+  max-width: 70%;
+  /* line-height: 1.4; */
+  margin-bottom: 30px;
+}
+
+

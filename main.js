@@ -1,5 +1,8 @@
 const tabs = document.querySelectorAll('.tab');
 
+let isDragging = false;
+
+
 tabs.forEach(tab => {
   tab.addEventListener('click', (e) => {
     e.stopPropagation(); // Prevent event bubbling
@@ -17,13 +20,24 @@ tabs.forEach(tab => {
   });
 });
 
+document.addEventListener('mousedown', () => {
+  isDragging = false;
+});
+
+document.addEventListener('mousemove', () => {
+  isDragging = true;
+});
+
 // Optionally, close all folders if clicking outside the folders
 document.addEventListener('click', () => {
+  if (isDragging) return;
+
   document.querySelectorAll('.folder').forEach(folder => {
     folder.classList.remove('active', 'open');
     folder.style.zIndex = "1";
   });
 });
+
 
 let dotHolder = document.getElementById("dot-holder");
 let numOfDots = Math.floor(Math.random() * (30 - 10 + 1)) + 10;
@@ -166,18 +180,29 @@ function makeDraggable(elmnt) {
   function dragMouseDown(e) {
     e = e || window.event;
     e.preventDefault();
-    
+  
+    isDragging = true;
+  
     pos3 = e.clientX;
     pos4 = e.clientY;
-    
+  
     elmnt.style.cursor = 'grabbing';
-    
     elmnt.style.zIndex = "100";
-    
+  
     document.onmouseup = closeDragElement;
     document.onmousemove = elementDrag;
   }
   
+  function closeDragElement() {
+    document.onmouseup = null;
+    document.onmousemove = null;
+    elmnt.style.cursor = 'grab';
+  
+    // Delay resetting `isDragging` to ensure click doesn't immediately fire
+    setTimeout(() => {
+      isDragging = false;
+    }, 50);
+  }
   function elementDrag(e) {
     e = e || window.event;
     e.preventDefault();
@@ -300,11 +325,43 @@ fetch(opensheet_uri)
       makeDraggable(img);
     });
 
-
   })
+
+
   .catch((err) => {
     console.error("Something went wrong!", err);
   });
+
+  const folderImages = {
+    A: "polaroids/SectionA.png",
+    B: "polaroids/SectionB.png",
+    // C: "polaroids/SectionC.png",
+    // D: "polaroids/SectionD.png",
+    E: "polaroids/SectionE.png",
+    // F: "polaroids/SectionF.png",
+    G: "polaroids/SectionG.png",
+    H: "polaroids/SectionH.png",
+    // I: "polaroids/SectionI.png"
+  };
+  
+  Object.entries(folderImages).forEach(([section, imgPath]) => {
+    const folder = document.getElementById(`section${section}-folder`);
+    if (!folder) return;
+  
+    const img = document.createElement("img");
+    img.src = imgPath;
+    img.alt = `Student from Section ${section}`;
+    img.classList.add("folder-photo");
+  
+    // Random angle to mimic post-it/photo effect
+    const angle = Math.random() * 20 - 10;
+    img.style.transform = `rotate(${angle}deg)`;
+  
+    folder.appendChild(img);
+    makeDraggable(img);
+  });
+  
+
   function preventScrollPastFooter() {
     const footer = document.querySelector('.web-footer');
     if (!footer) return;

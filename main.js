@@ -81,7 +81,7 @@ let webPhoto = document.getElementById("web-pic");
 let postItWeb = document.getElementById("desk-postit");
 let fundFlyer = document.getElementById("fund-flyer");
 
-let webPhotoList = ["imgs/web-pic01.png", "imgs/web-pic02.png", "imgs/web-pic03.png", "imgs/web-pic04.png", "imgs/web-pic05.png", "imgs/web-pic06.png", "imgs/web-pic07.png", "imgs/web-pic08.png", "imgs/web-pic09.png"];
+let webPhotoList = ["imgs/web-pic01.png", "imgs/web-pic02.png", "imgs/web-pic03.png", "imgs/web-pic04.png", "imgs/web-pic05.png", "imgs/web-pic06.png", "imgs/web-pic07.png", "imgs/web-pic08.png", "imgs/web-pic09.png", "imgs/web-pic00.png"];
 
 let randWebPhoto = Math.floor(Math.random() * webPhotoList.length);
 webPhoto.src = webPhotoList[randWebPhoto]

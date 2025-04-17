@@ -612,8 +612,8 @@ border-right: none;
     padding: 10%;
     width: 100vw;
     background-color: var(--black);
-    position: relative;
-    margin-top: 175%;
+    position: absolute;
+    margin-top: 200%;
   }
 
   #links{
